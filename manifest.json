@@ -2,14 +2,15 @@
     "manifest_version": 3,
     "name": "ApplicationManagerNoName",
     "version": "1.0.0",
-    "content_scripts": [
-        {
-            "matches": ["<all_urs>"],
-            "js": ["Content.js"]
-        }
-    ],
+    "permissions": ["activeTab"],
     "action": {
         "default_popup": "hello.html",
         "default_icon": "hello_extensions.png"
-    }
+    },
+    "content_scripts": [
+        {
+            "js": ["content-script.js"],
+            "matches": ["<all_urls>"]
+        }
+    ]
 }
